@@ -85,7 +85,7 @@ def main():
     )
 
     monitor = DATSET_TO_MONITOR[args.dataset]
-    m = "s2solp"
+    m = "s2asolp"
     ckpt_name = (
         f"{args.dataset}-{args.split_method}-{m}-{args.pooling_head}"
         if args.split_method
@@ -95,7 +95,7 @@ def main():
         args.wandb_run_name = ckpt_name
     mode = "max"
     model_checkpoint = ModelCheckpoint(
-        "checkpoints/s2solp",
+        "checkpoints/s2asolp",
         monitor=DATSET_TO_MONITOR[args.dataset],
         mode=mode,
         filename=ckpt_name,
