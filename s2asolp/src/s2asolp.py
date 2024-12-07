@@ -29,7 +29,7 @@ class S2asolP(nn.Module):
         self.criterion = nn.CrossEntropyLoss()
 
     def forward(self, input_ids, attention_mask, labels=None, bio_features=None):
-        embeddings = self.encoder.esm(
+        embeddings = self.encoder(
             input_ids=input_ids, attention_mask=attention_mask
         )["last_hidden_state"]
 
